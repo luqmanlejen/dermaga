@@ -1,6 +1,6 @@
 # Dermaga CMS by Opensoft Technologies
 
-A CMS for system starter kit. **Dermaga** means wharf in English, and so this CMS aims to become the wharf for data and information. 
+TEST A CMS for system starter kit. **Dermaga** means wharf in English, and so this CMS aims to become the wharf for data and information. 
 
 ## Features
 * User management
