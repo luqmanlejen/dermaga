@@ -54,6 +54,14 @@
                                     ['label' => Yii::t('app', 'New Role'), 'icon' => 'fa fa-plus-square-o', 'url' => ['/role/create'],],
                                 ],
                             ],
+                            [
+                                'label' => Yii::t('app', 'Manage Menu'),
+                                'icon' => 'fa fa-key',
+                                'url' => '#',
+                                'items' => [
+                                    ['label' => Yii::t('app', 'Menu'), 'icon' => 'fa fa-circle-o', 'url' => ['/menu/index'],],
+                                ],
+                            ],
                         ],
                     ],
                 ],
