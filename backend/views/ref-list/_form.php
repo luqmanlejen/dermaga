@@ -10,7 +10,14 @@ use yii\widgets\ActiveForm;
 
 <div class="ref-list-form">
 
-    <?php $form = ActiveForm::begin(); ?>
+    <?php
+    $form = ActiveForm::begin([
+                'options' => ['class' => 'form-group'],
+                'fieldConfig' => [
+                    'template' => "<div class=\"col-md-2\">{label}</div><div class=\"col-md-6\">{input}</div><div class=\"row\">{error}</div>",
+                ]
+    ]);
+    ?>
 
     <?= $form->field($model, 'code')->textInput(['maxlength' => true]) ?>
 
@@ -18,20 +25,15 @@ use yii\widgets\ActiveForm;
 
     <?= $form->field($model, 'label_en')->textInput(['maxlength' => true]) ?>
 
-    <?= $form->field($model, 'cat')->textInput() ?>
-
     <?= $form->field($model, 'sort')->textInput() ?>
 
-    <?= $form->field($model, 'created_dt')->textInput() ?>
-
-    <?= $form->field($model, 'created_by')->textInput(['maxlength' => true]) ?>
-
-    <?= $form->field($model, 'updated_dt')->textInput() ?>
-
-    <?= $form->field($model, 'updated_by')->textInput(['maxlength' => true]) ?>
-
-    <div class="form-group">
-        <?= Html::submitButton($model->isNewRecord ? 'Create' : 'Update', ['class' => $model->isNewRecord ? 'btn btn-success' : 'btn btn-primary']) ?>
+    <div class="clearfix"></div>
+    <div class="form-group well">
+        <div class="container">
+            <?= Html::a('<i class="fa fa-arrow-left"></i>&nbsp;&nbsp;Kembali', ['index'], ['class' => 'btn btn-flat bg-purple']) ?>
+            <?= Html::resetButton('<i class="fa fa-refresh"></i>&nbsp;&nbsp;Reset', ['class' => 'btn btn-flat btn-warning']) ?>
+            <?= Html::submitButton($model->isNewRecord ? '<i class="fa fa-plus"></i>&nbsp;&nbsp;Tambah' : '<i class="fa fa-arrow-pencil"></i>&nbsp;&nbsp;Kemaskini', ['class' => $model->isNewRecord ? 'btn btn-flat btn-success' : 'btn btn-flat btn-primary']) ?>
+        </div>
     </div>
 
     <?php ActiveForm::end(); ?>

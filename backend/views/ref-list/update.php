@@ -5,17 +5,18 @@ use yii\helpers\Html;
 /* @var $this yii\web\View */
 /* @var $model common\models\RefList */
 
-$this->title = 'Update Ref List: ' . $model->id;
-$this->params['breadcrumbs'][] = ['label' => 'Ref Lists', 'url' => ['index']];
+$this->title = 'Kemaskini Parameter ' . $model->id;
+$this->params['breadcrumbs'][] = ['label' => 'Selenggara Parameter', 'url' => ['index']];
 $this->params['breadcrumbs'][] = ['label' => $model->id, 'url' => ['view', 'id' => $model->id]];
-$this->params['breadcrumbs'][] = 'Update';
+$this->params['breadcrumbs'][] = 'Kemaskini';
 ?>
 <div class="ref-list-update">
 
-    <h1><?= Html::encode($this->title) ?></h1>
-
-    <?= $this->render('_form', [
+    <br>
+    <?=
+    $this->render('_form', [
         'model' => $model,
-    ]) ?>
+    ])
+    ?>
 
 </div>

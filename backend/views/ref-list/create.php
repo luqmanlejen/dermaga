@@ -2,20 +2,20 @@
 
 use yii\helpers\Html;
 
-
 /* @var $this yii\web\View */
 /* @var $model common\models\RefList */
 
-$this->title = 'Create Ref List';
-$this->params['breadcrumbs'][] = ['label' => 'Ref Lists', 'url' => ['index']];
+$this->title = 'Tambah Parameter';
+$this->params['breadcrumbs'][] = ['label' => 'Selenggara Parameter', 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 ?>
-<div class="ref-list-create">
+<div class="ref-list-create box box-primary">
 
-    <h1><?= Html::encode($this->title) ?></h1>
-
-    <?= $this->render('_form', [
+    <br>
+    <?=
+    $this->render('_form', [
         'model' => $model,
-    ]) ?>
+    ])
+    ?>
 
 </div>
