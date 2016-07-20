@@ -6,13 +6,14 @@ use yii\widgets\ActiveForm;
 /* @var $this yii\web\View */
 /* @var $model common\models\RefListSearch */
 /* @var $form yii\widgets\ActiveForm */
+//$cat = $_GET['cat'];
 ?>
 
 <div class="ref-list-search  box box-primary well">
 
     <?php
     $form = ActiveForm::begin([
-                'action' => ['index'],
+                'action' => ['index', 'cat'=>$cat],
                 'method' => 'get',
                 'options' => ['class' => 'form-group'],
                 'fieldConfig' => [
@@ -20,7 +21,7 @@ use yii\widgets\ActiveForm;
                 ],
     ]);
     ?>
-
+    
     <?= $form->field($model, 'label_my') ?>
 
     <div class="row">
@@ -29,9 +30,10 @@ use yii\widgets\ActiveForm;
 
     <div class="row">
         <div class="col-md-12">
-            <?= Html::a('<i class="fa fa-plus"></i>&nbsp;&nbsp; Tambah', ['create'], ['class' => 'btn btn-flat btn-success']) ?>
-            <?= Html::resetButton('<i class="fa fa-refresh"></i>&nbsp;&nbsp; Reset', ['class' => 'btn btn-flat btn-warning']) ?>
-            <?= Html::submitButton('<i class="fa fa-search"></i>&nbsp;&nbsp; Carian', ['class' => 'btn btn-flat btn-primary']) ?>
+            <?= Html::a('<div style="color:#3c8dbc;"><i class="fa fa-arrow-left"></i>&nbsp;&nbsp; Kembali</div>', ['ref-cat/index'], ['class' => 'btn btn-flat bg-gray']) ?>
+            <?= Html::a('<i class="fa fa-plus"></i>&nbsp;&nbsp; Tambah', ["create?cat=$cat"], ['class' => 'btn btn-flat bg-success']) ?>
+            <?= Html::a('<i class="fa fa-refresh"></i>&nbsp;&nbsp; Reset', ["index?cat=$cat"], ['class' => 'btn btn-flat bg-warning']) ?>
+            <?= Html::submitButton('<div style="color:#3c8dbc;"><i class="fa fa-search"></i>&nbsp;&nbsp; Carian</div>', ['class' => 'btn btn-flat bg-info']) ?>
         </div>
     </div>
 

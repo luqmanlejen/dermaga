@@ -5,12 +5,11 @@ use yii\helpers\Html;
 /* @var $this yii\web\View */
 /* @var $model common\models\RefList */
 
-$this->title = 'Kemaskini Parameter ' . $model->id;
+$this->title = 'Kemaskini Parameter';
 $this->params['breadcrumbs'][] = ['label' => 'Selenggara Parameter', 'url' => ['index']];
-$this->params['breadcrumbs'][] = ['label' => $model->id, 'url' => ['view', 'id' => $model->id]];
-$this->params['breadcrumbs'][] = 'Kemaskini';
+$this->params['breadcrumbs'][] = $this->title;
 ?>
-<div class="ref-list-update">
+<div class="ref-list-update box box-primary">
 
     <br>
     <?=
