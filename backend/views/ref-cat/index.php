@@ -15,7 +15,7 @@ $this->params['breadcrumbs'][] = $this->title;
 
 <div class="ref-cat-index box box-default">
 
-    <?php Pjax::begin(); ?>    
+    <?php // Pjax::begin(); ?>    
     <?=
     GridView::widget([
         'dataProvider' => $dataProvider,
@@ -30,10 +30,23 @@ $this->params['breadcrumbs'][] = $this->title;
             [
                 'class' => 'yii\grid\ActionColumn',
                 'header' => 'Tindakan',
+                'headerOptions' => ['width' => '150'],
+                'template' => '{list}&nbsp;{update}&nbsp;{delete}',
+                'buttons' => [
+                    'list' => function($url, $model){
+                        return Html::a('<i class="fa fa-list"></i>', ["ref-list/index?id=$model->id"], ['class' => 'btn bg-success']);                        
+                    },
+                    'update' => function($url, $model){
+                        return Html::a('<i class="fa fa-pencil"></i>', ["ref-cat/update?id=$model->id"], ['class' => 'btn bg-info']);                        
+                    },
+                    'delete' => function($url, $model){
+                        return Html::a('<i class="fa fa-trash"></i>', ["ref-cat/delete?id=$model->id"], ['class' => 'btn bg-danger']);                        
+                    },
+                ]
             ],
         ],
     ]);
     ?>
-    <?php Pjax::end(); ?></div>
+    <?php // Pjax::end(); ?></div>
 
 <div class="clearfix"></div>
