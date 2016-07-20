@@ -7,41 +7,24 @@ use yii\base\Model;
 use yii\data\ActiveDataProvider;
 use common\models\RefList;
 
-/**
- * RefListSearch represents the model behind the search form about `common\models\RefList`.
- */
-class RefListSearch extends RefList
-{
-    /**
-     * @inheritdoc
-     */
-    public function rules()
-    {
+class RefListSearch extends RefList {
+
+    public function rules() {
         return [
             [['id', 'cat', 'sort'], 'integer'],
             [['code', 'label_my', 'label_en', 'created_dt', 'created_by', 'updated_dt', 'updated_by'], 'safe'],
         ];
     }
 
-    /**
-     * @inheritdoc
-     */
-    public function scenarios()
-    {
+    public function scenarios() {
         // bypass scenarios() implementation in the parent class
         return Model::scenarios();
     }
 
-    /**
-     * Creates data provider instance with search query applied
-     *
-     * @param array $params
-     *
-     * @return ActiveDataProvider
-     */
-    public function search($params)
-    {
-        $query = RefList::find();
+    public function search($params) {
+        $id = $_GET['cat'];
+            
+        $query = RefList::find()->where("cat=$id")->orderBy(['updated_dt'=>SORT_DESC]);
 
         // add conditions that should always apply here
 
@@ -67,10 +50,10 @@ class RefListSearch extends RefList
         ]);
 
         $query->andFilterWhere(['like', 'code', $this->code])
-            ->andFilterWhere(['like', 'label_my', $this->label_my])
-            ->andFilterWhere(['like', 'label_en', $this->label_en])
-            ->andFilterWhere(['like', 'created_by', $this->created_by])
-            ->andFilterWhere(['like', 'updated_by', $this->updated_by]);
+                ->andFilterWhere(['like', 'label_my', $this->label_my])
+                ->andFilterWhere(['like', 'label_en', $this->label_en])
+                ->andFilterWhere(['like', 'created_by', $this->created_by])
+                ->andFilterWhere(['like', 'updated_by', $this->updated_by]);
 
         return $dataProvider;
     }
