@@ -34,13 +34,13 @@ $this->params['breadcrumbs'][] = $this->title;
                 'template' => '{list}&nbsp;{update}&nbsp;{delete}',
                 'buttons' => [
                     'list' => function($url, $model){
-                        return Html::a('<i class="fa fa-list"></i>', ["ref-list/index?id=$model->id"], ['class' => 'btn bg-success']);                        
+                        return Html::a('<i class="fa fa-list"></i>', ["ref-list/index?cat=$model->id"], ['class' => 'btn btn-flat bg-success']);                        
                     },
                     'update' => function($url, $model){
-                        return Html::a('<i class="fa fa-pencil"></i>', ["ref-cat/update?id=$model->id"], ['class' => 'btn bg-info']);                        
+                        return Html::a('<i class="fa fa-pencil"></i>', ["ref-cat/update?id=$model->id"], ['class' => 'btn btn-flat bg-info']);                        
                     },
                     'delete' => function($url, $model){
-                        return Html::a('<i class="fa fa-trash"></i>', ["ref-cat/delete?id=$model->id"], ['class' => 'btn bg-danger']);                        
+                        return Html::a('<i class="fa fa-trash"></i>', ["ref-cat/delete?id=$model->id"], ['class' => 'btn btn-flat bg-danger']);                        
                     },
                 ]
             ],

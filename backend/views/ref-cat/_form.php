@@ -26,9 +26,9 @@ use yii\widgets\ActiveForm;
     <div class="clearfix"></div>
     <div class="form-group well">
         <div class="container">
-            <?= Html::a('<i class="fa fa-arrow-left"></i>&nbsp;&nbsp;Kembali', ['index'], ['class' => 'btn bg-purple']) ?>
-            <?= Html::resetButton('<i class="fa fa-refresh"></i>&nbsp;&nbsp;Reset', ['class' => 'btn btn-warning']) ?>
-            <?= Html::submitButton($model->isNewRecord ? '<i class="fa fa-plus"></i>&nbsp;&nbsp;Tambah' : '<i class="fa fa-arrow-pencil"></i>&nbsp;&nbsp;Kemaskini', ['class' => $model->isNewRecord ? 'btn btn-success' : 'btn btn-primary']) ?>
+            <?= Html::a('<div style="color:#3c8dbc;"><i class="fa fa-arrow-left"></i>&nbsp;&nbsp;Kembali</div>', ["index"], ['class' => 'btn btn-flat bg-info']) ?>
+            <?= Html::resetButton('<div style="color:#3c8dbc;"><i class="fa fa-refresh"></i>&nbsp;&nbsp;Reset</div>', ['class' => 'btn btn-flat bg-warning']) ?>
+            <?= Html::submitButton($model->isNewRecord ? '<div style="color:#3c8dbc;"><i class="fa fa-plus"></i>&nbsp;&nbsp;Tambah</div>' : '<div style="color:#3c8dbc;"><i class="fa fa-pencil"></i>&nbsp;&nbsp;Kemaskini</div>', ['class' => $model->isNewRecord ? 'btn btn-flat bg-success' : 'btn btn-flat bg-success']) ?>
         </div>
     </div>
     <?php ActiveForm::end(); ?>

@@ -5,13 +5,12 @@ use yii\helpers\Html;
 /* @var $this yii\web\View */
 /* @var $model common\models\RefCat */
 
-$this->title = 'Tambah Parameter';
-$this->params['breadcrumbs'][] = ['label' => 'Tambah Parameter', 'url' => ['index']];
+$this->title = 'Tambah Ketegori Parameter';
+$this->params['breadcrumbs'][] = ['label' => 'Parameter', 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="ref-cat-create box box-primary">
-
-    <!--<h1><?= Html::encode($this->title) ?></h1>-->
+    
     <br>
     <?=
     $this->render('_form', [
